@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<meta charset="UTF-8">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-left">
+                <h1 class="mt-5">Welcome to Ale's Computer Shop</h1>
+                <p class="lead">Input information of new product</p>
+            </div>
+        <div id="results" class="col-lg-8 text-center order-3">
+            <table class="table">
+			    <thead>
+				    <tr>
+					    <th>Item</th>
+					    <th>Price</th>
+					    <th>Description</th>
+                        <th>Specs</th>
+					    <th>Action</th>
+				    </tr>
+				    <tr>
+					<td><input class="form-control author-input"></td>
+					<td><input class="form-control title-input"></td>
+					<td><input class="form-control url-input"></td>
+                    <td><input class="form-control section-input"></td>
+					<td><button class="btn btn-primary add-blog">Add</button></td>
+				    </tr>
+			    </thead>
+            <thead><tr><th>Laptops</tr></th></thead>
+			<tbody class="blogs-list">
+            <!--body of laptops-->
+            </tbody>
+            <thead><tr><th>Rams</tr></th></thead>
+            <tbody class="blogs-list2">
+            <!--body of rams-->
+            </tbody>
+		</table>
+        
+        </div>
+        <div class="col-lg-4 text-center order-2">
+            <form enctype="application/json" action="/post/json" method="post">
+                <div class="form-group">
+                    <select class="form-control" name="sec_n">
+                        <option value="0">Laptops</option>
+                        <option value="1">RAMs</option>
+                        <option value="2">GPUs</option>
+                        <option value="3">Accesories</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="item" placeholder="Item">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="price" placeholder="Price">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="description" placeholder="Description">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="specs" placeholder="Specs">
+                </div>
+                <button type="submit" class="btn btn-block btn-primary">Submit</button>
+            </form>
+
+        </div>
+    </div>
+  </div>
+
+		
+
+	</div>
+
+	<script type="text/template" class="products-list-template">
+
+	    <td><span class="author"><%= author %></span></td>
+	    <td><span class="title"><%= title %></span></td>
+	    <td><span class="url"><%= url %></span></td>
+	    <td><button class="btn btn-warning edit-blog">Edit</button> <button class="btn btn-danger delete-blog">Delete</button><button class="btn btn-success update-blog" style="display:none">Update</button> <button class="btn btn-danger cancel" style="display:none">Cancel</button></td>
+
+	</script>
+	
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/underscore/underscore.js"></script>
+	<script src="bower_components/backbone/backbone.js"></script>
+	<script src="scripts.js"></script>
+</body>
+</html>
